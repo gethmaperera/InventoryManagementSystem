@@ -1,0 +1,35 @@
+<ba-card>
+    <br>
+    <table class="table table-striped table-hover " style="width:70%">
+        <tr>
+            <th>
+                <h3>Item ID</h3>
+            </th>
+            <th>
+                <h3>Item Name</h3>
+            </th>
+            <th>
+                <h3>Item Type</h3>
+            </th>
+            <th>
+                <h3>Employee Id</h3>
+            </th>
+            <th>
+                <h3>User Name</h3>
+            </th>
+            <th>
+                <h3>Date of Allocation</h3>
+            </th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let allocateditem of allocations">
+            <td>{{allocateditem.itemId }}</td>
+            <td>{{allocateditem.itemNamae }}</td>
+            <td>{{ allocateditem.itemType }}</td>
+            <td>{{ allocateditem.employeeId}}</td>
+            <td>{{ allocateditem.username}}</td>
+            <td>{{ allocateditem.allocatedate}}</td>
+        </tr>
+    </table>
+</ba-card>

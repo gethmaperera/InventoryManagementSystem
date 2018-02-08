@@ -1,0 +1,23 @@
+<ba-card>
+    <table class="table table-striped table-hover " style="width:50%">
+
+        <tr>
+            <th>
+                <h3>Item Id</h3>
+            </th>
+            <th>
+                <h3>Item Name</h3>
+            </th>
+            <th>
+                <h3>Item Type</h3>
+            </th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let availablemoreitem of availablesmoredetails">
+            <td>{{availablemoreitem.itemId }}</td>
+            <td>{{ availablemoreitem.itemName }}</td>
+            <td>{{ availablemoreitem.itemType}}</td>
+        </tr>
+    </table>
+</ba-card>

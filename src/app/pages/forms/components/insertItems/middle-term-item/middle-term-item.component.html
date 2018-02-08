@@ -1,0 +1,218 @@
+<div *ngIf="userRole=='employee'?true:fasle">
+    <p>
+        <h1>You Cannot Access to this page</h1>
+        <h5>only administrator and inventory contoller can access to this page!!</h5>
+        <p>
+</div>
+<div *ngIf="userRole!='employee'?true:fasle">
+    <div class="widgets">
+
+
+        <ba-card cardTitle="Insert Items" baCardClass="with-scroll">
+            <div class="btn-group-example">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-default btn-lg" [routerLink]="['/pages/forms/shortTermItemInsert']">Short Term Item</button>
+                    <button type="button" class="btn btn-info btn-lg" href="#">Middle Term Item</button>
+                    <button type="button" class="btn btn-default btn-lg" [routerLink]="['/pages/forms/longTermItemInsert']">Long Term Item</button>
+                </div>
+            </div>
+        </ba-card>
+
+        <div class="row">
+            <div class="col-md-6">
+                <ba-card cardTitle="Middle Term Insert" baCardClass="with-scroll">
+                    <p>{{itemDate | date:'mediumDate'}}</p>
+                    <div class='panel-body'>
+                        <form class='form-horizontal' role='form' (submit)="onMiddleTermItemSubmit()">
+
+
+                            <div class='form-group'>
+                                <label>Item Name</label>
+                                <input class='form-control' type='text' [(ngModel)]="itemName" name="itemName" placeholder='Item Name'>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Item Type</label>
+                                        <div>
+                                            <select class='form-control' [(ngModel)]="itemType" name="itemType" placeholder='Item type'>
+                                                    <option>Laptop</option>
+                                                    <option>Headset</option>
+                                                    <option>Dekstop</option>
+                                                    <option>WebCam</option>
+                                                    <option>Microphone</option>
+                                                    <option>Tablet</option>
+                                                    <option>MobilePhone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Item Brand</label>
+                                        <div>
+                                            <select class='form-control' [(ngModel)]="itemBrand" name="itemBrand">
+                                                <option>HP</option>
+                                                <option>Dell</option>
+                                                <option>Asus</option>
+                                                <option>Acer</option>
+                                                <option>Macintosh</option>
+                                                <option>Senheizer</option>
+                                                <option>Samsung</option>
+                                                
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Item Quantity</label>
+                                    <input class='form-control' type='number' [(ngModel)]="itemQuantity" name="itemQuantity" placeholder='Item Quantity' min="1">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class='form-group'>
+                                    <label>Invoice Number</label>
+                                    <input class='form-control' type='text' [(ngModel)]="invoiceNumber" name="invoiceNumber" placeholder='Invoice Number'>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Warranty</label>
+                                        <div>
+                                            <select class='form-control' [(ngModel)]="warrantyType" name="warrantyType" placeholder='Warranty Type'>
+                                                <option>Years</option>
+                                                <option>Months</option>
+                                                <option>Days</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>.</label>
+                                        <div>
+                                            <input class='form-control' [(ngModel)]="warrantyQuantity" name="warrantyQuantity" placeholder='' type='number' min="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div *ngIf="itemQuantity==1?true:false">
+                                <div>
+                                    <div class='form-group'>
+                                        <label>Reference ID</label>
+                                        <input class='form-control' [(ngModel)]="referenceId" name="referenceId" placeholder='Reference Id' type='text'>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class='form-group'>
+                                        <label>Warehouse</label>
+                                        <select class='form-control' [(ngModel)]="itemWarehouse" name="itemWarehouse">
+                                            <option>Warehouse 1</option>
+                                            <option>Warehouse 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <div class='col-md-13'>
+                                        <textarea class='form-control' type='text' [(ngModel)]="itemDescription" name="itemDescription" placeholder='Item Description' rows='3'></textarea>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-primary" value="Submit">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="cancel" class="btn btn-primary" value="Cancel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </ba-card>
+            </div>
+            <div *ngIf="itemQuantity>1?true:false" class="col-md-6">
+                <div class='panel-body'>
+                    <form class='form-horizontal' role='form' (submit)="onMiddleTermItemMultipleSubmit()">
+                        <ba-card cardTitle="Item Count" baCardClass="with-scroll">
+                            <div>
+                                <div class='form-group'>
+                                    <label>Reference ID</label>
+                                    <input class='form-control' [(ngModel)]="referenceId" name="referenceId" placeholder='Reference Id' type='text'>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class='form-group'>
+                                    <label>Warehouse</label>
+                                    <select class='form-control' [(ngModel)]="itemWarehouse" name="itemWarehouse">
+                                        <option>Warehouse 1</option>
+                                        <option>Warehouse 2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Description</label>
+                                <div class='col-md-13'>
+                                    <textarea class='form-control' type='text' [(ngModel)]="itemDescription" name="itemDescription" placeholder='Item Description' rows='3'></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary" value="Submit">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input type="cancel" class="btn btn-primary" value="Cancel">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ba-card>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <ba-card cardTitle="QR Generate" baCardClass="with-scroll">
+                    <div>
+                        <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]=referenceId></ngx-qrcode>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <button type="button" (click)="QRprint()" class="btn btn-info btn-lg">Print QR</button>
+                    </div>
+                </ba-card>
+            </div>
+
+        </div>
+    </div>
+</div>

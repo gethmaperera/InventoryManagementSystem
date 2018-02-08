@@ -1,0 +1,130 @@
+<div *ngIf="userRole=='employee'?true:fasle">
+  <p>
+    <h1>You Cannot Access to this page</h1>
+    <h5>only administrator and inventory contoller can access to this page!!</h5>
+  <p>
+</div>
+<div *ngIf="userRole!='employee'?true:fasle">
+  <div class="widgets">
+    
+    <!-- <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#">Short Term</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <a class="nav-link" data-toggle="tab" [routerLink]="['/middleTermItem']">Middle Term</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <a class="nav-link" data-toggle="tab" [routerLink]="['/longTermItem']">Long Term</a>
+    </li>
+  </ul> -->
+
+    <ba-card cardTitle="Insert Items" baCardClass="with-scroll">
+      <div class="btn-group-example">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-info btn-lg" href="#">Short Term Item</button>
+          <button type="button" class="btn btn-default btn-lg" [routerLink]="['/pages/forms/middleTermItemInsert']">Middle Term Item</button>
+          <button type="button" class="btn btn-default btn-lg" [routerLink]="['/pages/forms/longTermItemInsert']">Long Term Item</button>
+        </div>
+      </div>
+    </ba-card>
+ 
+    <div>
+      <div class="col-md-6">
+        <ba-card cardTitle="Short Term Insert" baCardClass="with-scroll">
+          <p>{{itemDate | date:'mediumDate'}}</p>
+          <div class='panel-body'>
+            <form class='form-horizontal' role='form' (submit)="onShortTermItemSubmit()">
+
+              <div class="form-group">
+                <label class=''>Item Name</label>
+                <input class='form-control' type='text' [(ngModel)]="itemName" name="itemName" placeholder='Item Name'>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Item Type</label>
+                    <div>
+                      <select class='form-control' [(ngModel)]="itemType" name="itemType" placeholder='Item type'>
+                        <option>Beverages</option>
+                        <option>Stationary</option>
+                        <option>Food Items</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Item Quantity</label>
+                    <div>
+                      <input class='form-control' type='number' [(ngModel)]="itemQuantity" name="itemQuantity" placeholder='Item Quantity' min="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label>Warehouse</label>
+                <div class='col-md-6'>
+                  <select class='form-control' type='text' [(ngModel)]="itemWarehouse" name="itemWarehouse" placeholder='Item Warehouse'>
+                    <option>Warehouse 1</option>
+                    <option>Warehouse 2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Re-Order Level</label>
+                    <select class='form-control' type='text' [(ngModel)]="reorderLevel" name="reorderLevel" placeholder='Re-Order Level'>
+                      <option>Days</option>
+                      <option>Months</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>.</label>
+                    <input class='form-control' type='number' [(ngModel)]="reorderTime" name="reorderTime" placeholder='reorderTime' min="1">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label>Description</label>
+                <div class='col-md-13'>
+                  <textarea class='form-control' type='text' [(ngModel)]="itemDescription" name="itemDescription" placeholder='Item Description'
+                    rows='3'></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <input type="cancel" class="btn btn-primary" value="Cancel">
+                  </div>
+                </div>
+              </div>
+
+
+
+            </form>
+          </div>
+        </ba-card>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

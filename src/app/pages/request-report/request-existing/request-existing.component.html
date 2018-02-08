@@ -1,0 +1,46 @@
+<form (ngSubmit)="saverequestexistingdata()">
+    <ba-card>
+        <div ng-app="myApp" ng-controller="myCtrl">
+
+            <div class="form-group">
+                <label>Item Type</label>
+                <select [(ngModel)]="itemType" name="itemType" class="form-control">
+                                  
+<option value="Shortterm">Stationary</option>
+<option value="Middleterm">Electronics</option>
+<option value="Longterm">Long term item</option>
+                                  
+                                
+</select>
+
+            </div>
+
+            <br>
+            <div class="form-group">
+                <label>Item Name  </label>
+                <input type="text" (keyup)="getItem()" class="form-control" [(ngModel)]="itemName" name="itemName">
+
+            </div>
+            <br>
+            <div *ngFor="let item of itemArray">
+                <label>Item Id </label> <br>
+                <input type="text" disabled class="form-control" [(ngModel)]="itemId" name="itemId" placeholder="{{item.itemId}}">
+            </div>
+            if Assigning To Another:
+            <br>
+            <div class="form-group">
+                <label>Employee Id  </label>
+                <input class="form-control" type="text" (keyup)="getEmployeeData()" [(ngModel)]="employeeId" name="employeeId">
+            </div>
+            <div *ngFor="let user of userArray">
+                <label>Username</label> <br>
+                <input type="text" disabled class="form-control" [(ngModel)]="username" name="username" placeholder="{{user.username}}">
+
+            </div>
+            <br>
+
+            <button type="submit " class="btn btn-primary">Request Item</button>
+
+        </div>
+    </ba-card>
+</form>

@@ -1,0 +1,25 @@
+<form (submit)="setshortTermDeletion()">
+  <!-- <fieldset> -->
+    <!-- <legend>Delete Short Property</legend> -->
+    <br>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header" name="itemName" [(ngModel)]="itemName">Item Name</div>
+      <div class="card-body">
+        <h4 class="card-title"type="text"  name="itemId" [(ngModel)]="itemId">Item ID</h4>
+        <p class="card-text"name="itemType" [(ngModel)]="itemType">Item Type</p>
+      </div>
+    </div>
+
+   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <br>
+        <button type="submit" class="btn btn-default">Delete</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+      </div>
+    </div>
+  <!-- </fieldset> -->
+</form>
+
+
+

@@ -1,0 +1,39 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
+    <a routerLink="/pages/dashboard" class="al-logo clearfix"><img height="40" width="40" src="../../../../assets/logo/logo.png"><span>Crowd-</span>Inventory</a>
+    <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
+
+    <div class="search">
+        <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+        <input id="searchInput" (click)="toggledrop()" type="text" [(ngModel)]="searchterm" (keyup)="valuechange($event)" placeholder="Search for...">
+        <div class="dropdownSearch" *ngIf='showDropDown'>
+            <div>
+                <div (click)="selectValue(x)" class='search-results ' *ngFor="let x of value | filter:searchterm">
+                    <div *ngIf="showData">
+
+                        <button class='searchclickbutton' [routerLink]="['/pages/item-allocation/itemview/', x.itemId]">
+                           
+                             {{x.name}}  {{x.itemId}}
+    </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-profile clearfix">
+        <div class="dropdown al-user-profile">
+            <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
+                <img src="data:image/PNG;base64,{{url.photodata}}">
+
+
+            </a>
+            <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+                <li class="dropdown-item"><a routerLink="/pages/profile"><i class="fa fa-user"></i>Profile</a></li>
+                <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
+                <li class="dropdown-item"><a role="button" (click)="signOut()"><i class="fa fa-power-off"></i>Sign out</a></li>
+            </ul>
+        </div>
+
+        <ba-msg-center></ba-msg-center>
+    </div>
+</div>

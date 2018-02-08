@@ -1,0 +1,24 @@
+<form>
+    <h2>Item Summary</h2>
+    <ba-card>
+        <div class="form-group">
+
+            <label><strong>Item Id :</strong>  {{itemId}}</label>
+
+        </div>
+        <div *ngFor="let item of itemArray">
+
+            <p><strong> Name:</strong> {{item.itemName}}</p>
+            <p><strong>Item Type: </strong>{{item.itemType}}</p>
+            <p><strong>Item Brand:</strong> {{item.itemBrand}}</p>
+            <p><strong>Item Quantity: </strong>{{item.itemQuantity}}</p>
+            <p><strong>Warrenty:</strong>{{item.warrantyType}} {{item.warrantyQuantity}}</p>
+            <p><strong>Invoice Number:</strong> {{item.invoiceNumber}}</p>
+            <p><strong>Item Warehouse: </strong>{{item.itemWarehouse}}</p>
+            <p><strong>Item Description: </strong>{{item.itemDescription}}</p>
+
+        </div>
+    </ba-card>
+
+
+</form>

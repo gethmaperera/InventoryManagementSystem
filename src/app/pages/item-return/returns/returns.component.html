@@ -1,0 +1,50 @@
+<form (submit)="insertIntoAvailables()">
+    <ba-card>
+
+        <div class="form-group">
+            <label for="inputItemId" class="col-lg-2 control-label"><h3>Item Id</h3></label>
+            <div>
+                <input type="text" class="form-control" placeholder="Item Id" name="itemId" [(ngModel)]="itemId">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputItemName" class="col-lg-2 control-label"><h3>Item Name</h3></label>
+            <div>
+                <input type="text" class="form-control" placeholder="Item Name" name="itemName" [(ngModel)]="itemName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputItemType" class="col-lg-2 control-label"><h3>Item Type</h3></label>
+            <div>
+                <select class='form-control' [(ngModel)]="itemType" name="itemType" placeholder='Item type'>
+          <option>Laptop</option>
+          <option>Headset</option>
+          <option>Dekstop</option>
+          <option>WebCam</option>
+          <option>Microphone</option>
+          <option>Tablet</option>
+          <option>MobilePhone</option>
+
+        </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputQRCode" class="col-lg-2 control-label"><h3>Employee Id</h3></label>
+            <div>
+                <input type="text" class="form-control" placeholder="Employee Id" name="employeeId" [(ngModel)]="employeeId">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+
+            <div class="col-lg-10 col-lg-offset-2">
+                <br>
+                <button type="reset" (click)="clearReturns()" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <Button class="btn btn-default" [routerLink]="['/pages/request-report/reportItem']">Add to Defects</Button>
+
+            </div>
+        </div>
+    </ba-card>
+
+</form>

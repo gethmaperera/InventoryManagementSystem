@@ -1,0 +1,44 @@
+<!-- <div *ngIf="userRole=='employee'?true:false">
+
+    <h1>You Cannot Access to this page</h1>
+    <h5>Only Administrator and Inventory Controller can access</h5>
+
+</div>
+<div *ngIf="userRole=='employee'? true:false"> -->
+<form name="Allocate item">
+
+    <ba-card>
+        <div class="form-group">
+            <label>Item ID</label>
+            <input type="text" class="form-control" (keyup)="getItem()" [(ngModel)]="itemId" name="itemId">
+        </div>
+        <div *ngFor="let item of itemArray">
+            <p>Item Name</p>
+            <h5>{{item.itemName}}</h5>
+            <br>
+            <p>Item Type</p>
+            <h5>{{item.itemType}}</h5>
+            <br>
+            <p>Item Warrenty Period</p>
+            <h5>{{item.warrentyQuantity}} {{item.warrantyType}}</h5>
+
+        </div>
+        <div class="form-group">
+            <label>Enter the User Details to Allocate the Above Item</label>
+        </div>
+        <div class="form-group">
+            <label>User ID</label>
+            <input type="text" class="form-control" (keyup)="getEmployeeData()" [(ngModel)]="employeeId" name="employeeId">
+        </div>
+        <div *ngFor="let user of userArray">
+            <p>User Name</p>
+            <h5>{{user.username}}</h5>
+
+        </div>
+
+
+
+        <button type="submit" (click)="saveallocationdata()" class="btn btn-primary">Allocate</button>
+        <button (click)="reset()" type="reset" class="btn btn-primary">Reset</button>
+    </ba-card>
+</form>

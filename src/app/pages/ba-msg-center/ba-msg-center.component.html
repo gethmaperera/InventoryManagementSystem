@@ -1,0 +1,36 @@
+
+<ul class="al-msg-center clearfix">
+  <li class="dropdown">
+    <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-bell-o"></i>
+      <span>{{ notifications.length }}</span>
+      <div class="notification-ring"></div>
+    </a>
+
+    <div class="top-dropdown-menu dropdown-menu" aria-labelledby="msg-dd1">
+      <i class="dropdown-arr"></i>
+
+      <div class="header clearfix">
+        <strong>Notifications</strong>
+        
+      </div>
+      <div class="msg-list">
+        <label style="width: 300px;" *ngFor="let msg of notifications" (click)="readNotification(msg._id)">
+          <div>
+            <span class="cut-with-dots"> {{ msg.msg }}
+          
+           <li style="width: 30px;" (click)="deleteNotification()" >
+          X
+           </li>
+              
+            </span>
+          
+          </div>
+        </label>
+       
+      </div>
+    
+    </div>
+  </li>
+
+</ul>

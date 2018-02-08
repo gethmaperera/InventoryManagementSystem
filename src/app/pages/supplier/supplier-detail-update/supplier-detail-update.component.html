@@ -1,0 +1,75 @@
+<form (submit)="setSupplierDetailsUpdate()">
+  <fieldset>
+    <legend>Supplier Details Update</legend>
+     
+     <div class="form-group">
+      <label for="supplierId" class="col-lg-2 control-label">Supplier Id</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="supplierId" name="supplierId" [(ngModel)]="supplierId">
+      </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="supplierName" class="col-lg-2 control-label">Supplier Name</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="supplierName" name="supplierName" [(ngModel)]="supplierName">
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label for="supplierName" class="col-lg-3 control-label">Company Phone Number</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="companyPhoneNumber" name="companyPhoneNumber" [(ngModel)]="companyPhoneNumber">
+      </div>
+    </div>
+
+
+     <div class="form-group">
+      <label for="contactPersonName" class="col-lg-2 control-label">Contact Person Name</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="contactPersonName" name="contactPersonName" [(ngModel)]="contactPersonName">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contactNumber" class="col-lg-2 control-label">Contact Number</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="contactNumber" name="contactNumber" [(ngModel)]="contactNumber">
+      </div>
+    </div>
+
+    <!--<div class="form-group">
+      <label for="contactNumber" class="col-lg-2 control-label">Supplier Item Types</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="supplierItemTypes" name="supplierItemTypes" [(ngModel)]="supplierItemTypes">
+      </div>
+    </div>
+   -->
+   <div class="form-group">
+      <label for="itemType" class="col-lg-2 control-label">Supplier Item Types</label>
+      <br>
+      <div class="col-lg-3">
+      <select multiple="" class="form-control" name="supplierItemTypes" [(ngModel)]="supplierItemTypes"id="exampleSelect2">
+         <option>Dekstop</option>
+        <option>Headset</option>
+        <option>Speakers</option>
+        <option>Laptop</option>
+        <option>iphone</option>
+
+      </select>
+    </div>
+    </div>
+   
+   
+   
+   
+   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <br>
+        <button type="submit" class="btn btn-default">Save</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

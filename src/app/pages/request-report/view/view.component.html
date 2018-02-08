@@ -1,0 +1,107 @@
+<h2>Requests for New Items</h2>
+<table class="table table-striped table-hover ">
+
+    <tr>
+
+        <th>
+            <h3>Date</h3>
+        </th>
+        <th>
+            <h3>Item Name</h3>
+        </th>
+        <th>
+            <h3>Item Type</h3>
+        </th>
+        <th>
+            <h3>Request Reason</h3>
+        </th>
+        <th>
+            <h3>Requested User</h3>
+        </th>
+    </tr>
+
+    <tr *ngFor="let newr of newrequests">
+        <td>{{ newr.date}}</td>
+        <td>{{ newr.itemName }}</td>
+        <td>{{ newr.itemType}}</td>
+        <td>{{ newr.requestReason}}</td>
+        <td>{{ newr.requesteduser}}</td>
+
+    </tr>
+
+</table>
+<br>
+<br>
+<h2>Requests for Available Items</h2>
+<table class="table table-striped table-hover ">
+
+    <tr>
+
+        <th>
+            <h3>Date</h3>
+        </th>
+        <th>
+            <h3>Item Id</h3>
+        </th>
+        <th>
+            <h3>Item Type</h3>
+        </th>
+        <th>
+            <h3>Employee should Assign</h3>
+        </th>
+        <th>
+            <h3>Requested User</h3>
+        </th>
+
+
+
+    </tr>
+
+    <tr *ngFor="let newr of exrequests">
+        <td>{{ newr.date}}</td>
+        <td>{{ newr.itemId }}</td>
+        <td>{{ newr.itemType}}</td>
+        <td>{{ newr.employeeId}}</td>
+        <td>{{ newr.requesteduser}}</td>
+
+    </tr>
+</table>
+<br>
+<br>
+<h2>Reported Defects of Items</h2>
+<table class="table table-striped table-hover ">
+
+    <tr>
+        <th>
+            <h3>Date</h3>
+        </th>
+        <th>
+            <h3>Item Id</h3>
+        </th>
+        <th>
+            <h3>Item Name</h3>
+        </th>
+        <th>
+            <h3>Item Type</h3>
+        </th>
+        <th>
+            <h3>Reason to Report</h3>
+        </th>
+        <th>
+            <h3>Reported User</h3>
+        </th>
+
+
+
+    </tr>
+
+    <tr *ngFor="let newr of newrequests">
+        <td>{{ newr.date}}</td>
+        <td>{{ newr.itemId }}</td>
+        <td>{{ newr.itemName }}</td>
+        <td>{{ newr.itemType}}</td>
+        <td>{{ newr.reportDescription}}</td>
+        <td>{{ newr.reporteduser}}</td>
+
+    </tr>
+</table>

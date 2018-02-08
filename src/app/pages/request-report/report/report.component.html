@@ -1,0 +1,30 @@
+<form name="reportitem" (ngSubmit)="savereportdata()">
+
+    <ba-card>
+        <div class="form-group">
+            <label for="middleItemId">Item ID</label>
+            <input type="text" (keyup)="getItem()" ng-show="" class="form-control" [(ngModel)]="itemId" name="itemId">
+
+        </div>
+        <div *ngFor="let item of itemArray">
+            <p>Item Name</p>
+            <h5>{{item.itemName}}</h5>
+            <br>
+            <p>Item Type</p>
+            <h5>{{item.itemType}}</h5>
+            <br>
+            <p>Item Warrenty Period</p>
+            <h5>{{item.warrentyQuantity}} {{item.warrantyType}}</h5>
+
+        </div>
+
+        <div class="form-group">
+            <label for="reportDescription">Description</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="reportDescription" name="reportDescription" placeholder=""></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Report This Item</button>
+    </ba-card>
+
+
+</form>

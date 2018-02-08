@@ -1,0 +1,21 @@
+<ba-card>
+    <table class="table table-striped table-hover " style="width:50%">
+
+        <tr>
+            <th>
+                <h3>Item Type</h3>
+            </th>
+            <th>
+                <h3>Available Quantity</h3>
+            </th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let availableitem of availables">
+            <td>{{ availableitem._id }}</td>
+            <td>{{ availableitem.quantity}}</td>
+        </tr>
+        <br>
+        <Button class="btn btn-default" [routerLink]="['/pages/item-available/showmoreavailables']">For More Details</Button>
+    </table>
+</ba-card>

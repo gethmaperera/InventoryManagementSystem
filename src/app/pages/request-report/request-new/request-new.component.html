@@ -1,0 +1,40 @@
+<form (ngSubmit)="saverequestnewdata()">
+
+    <ba-card>
+
+
+        <div class="form-group">
+            <label>Item Name  </label>
+            <input type="text" id="itemname" class="form-control" [(ngModel)]="itemName" name="itemName">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Item Type</label>
+
+            <select class="form-control" [(ngModel)]="itemType" name="itemType">
+                                      
+                                      <option value="Shortterm">Stationary</option>
+                                     <option value="Middleterm">Electronics</option>
+                                      <option value="Longterm">Long term item</option>
+                                      
+                                    
+                      </select>
+
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label>Number of items needed  </label>
+            <input type="text" class="form-control" placeholder="1" [(ngModel)]="itemsNeeded" name="itemsNeeded">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Reason for the request</label>
+            <textarea [(ngModel)]="requestReason" name="requestreason" class="form-control"></textarea>
+        </div>
+        <br>
+
+        <button type="submit " class="submit " class="btn btn-primary">Request Item</button>
+    </ba-card>
+
+</form>

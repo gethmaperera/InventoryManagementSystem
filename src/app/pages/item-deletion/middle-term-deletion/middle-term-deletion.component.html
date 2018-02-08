@@ -1,0 +1,58 @@
+<form (submit)="setMiddleTermDeletion()">
+  <!-- <fieldset>
+    <legend>Delete Middle Property</legend>
+  <div class="form-group">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="itemId" name="itemId" [(ngModel)]="itemId">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+
+     </div>
+     
+     <div class="form-group">
+      <label for="itemName" class="col-lg-2 control-label">Item Name</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="ItemName" name="itemName" [(ngModel)]="itemName">
+      </div>
+    </div> -->
+    <!--<div class="form-group">
+      <label for="itemType" class="col-lg-2 control-label">Item Type</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="ItemType" name="itemType" [(ngModel)]="itemType">
+      </div>
+    </div>
+   -->
+    <!-- <div class="form-group">
+      <label for="itemType" class="col-lg-2 control-label">Item Type</label>
+      <br>
+      <div class="col-lg-3">
+      <select type="text" class="form-control"name="itemType" [(ngModel)]="itemType" id="exampleSelect1">
+        <option>elec</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      </div>
+    </div> -->
+
+    <br>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header" name="itemName" [(ngModel)]="itemName">Item Name</div>
+      <div class="card-body">
+        <h4 class="card-title"type="text"  name="itemId" [(ngModel)]="itemId">Item ID</h4>
+        <p class="card-text"name="itemType" [(ngModel)]="itemType">Item Type</p>
+      </div>
+    </div>
+
+   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <br>
+        <button type="submit" class="btn btn-default">Delete</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+      </div>
+    </div>
+  <!-- </fieldset> -->
+</form>
