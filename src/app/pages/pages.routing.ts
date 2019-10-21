@@ -30,7 +30,8 @@ export const routes: Routes = [
          
       { path: 'item-available', loadChildren: './item-available/item-available.module#ItemAvailableModule' },
       { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
-      { path: 'item-return', loadChildren: './item-return/item-return.module#ItemReturnModule' },     { path: 'set-notification', loadChildren: './set-notification/set-notification.module#SetNotificationModule' },
+      { path: 'item-return', loadChildren: './item-return/item-return.module#ItemReturnModule' },     
+      { path: 'set-notification', loadChildren: './set-notification/set-notification.module#SetNotificationModule' },
       { path: 'item-deletion', loadChildren: './item-deletion/item-deletion.module#ItemDeletionModule' },
       { path: 'item-updating', loadChildren: './item-updating/item-updating.module#ItemUpdatingModule' },
       { path: 'supplier', loadChildren: './supplier/supplier.module#SupplierModule' }
